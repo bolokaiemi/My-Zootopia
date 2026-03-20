@@ -116,3 +116,19 @@ for animal in load_data("animals_data.json"):
 
 print(output)
 
+# Generate HTML list items dynamically from output
+# Assume output is already generated as HTML <li> elements
+html_content = f"""
+<body>
+    <h1>My Animal Repository</h1>
+    <ul class="cards">
+        {output.replace('\n', '<br>')}
+    </ul>
+</body>
+"""
+
+with open("animals.html", "w", encoding="utf-8") as file:
+    file.write(html_content)
+
+print("HTML file created!")
+
