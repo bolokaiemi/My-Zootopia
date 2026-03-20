@@ -55,12 +55,11 @@
 </head>
 <body>
     <h1>My Animal Repository</h1>
-    <ul class="cards">
-        __REPLACE_ANIMALS_INFO__
-    </ul>
+
 </body>
 </html>
-        }
+<style>
+
 
         h1 {
             text-align: center;
@@ -114,23 +113,24 @@
         </style>
     </head>
     <body>
-        <h1>My Animal Repository</h1>
-        <ul class="cards">
-            __REPLACE_ANIMALS_INFO__
-        </ul>
+      <ul class="cards">
+    <li class="cards__item">
+    Name: American Foxhound<br/>
+    Diet: Omnivore<br/>
+    Location: North-America<br/>
+    Type: Hound<br/>
+    </li>
+    <li class="cards__item">
+    Name: Arctic Fox<br/>
+    Diet: Carnivore<br/>
+    Location: Eurasia<br/>
+    Type: Mammal<br/>
+    </li>
+</ul>
     </body>
 </html>
 
-html_template = """
-<html>
-<body>
-<h1>Animals</h1>
-__REPLACE_ANIMALS_INFO__
-</body>
-</html>
-"""
 
-# Replace placeholder with your generated string
-final_html = html_template.replace("__REPLACE_ANIMALS_INFO__", output)
 
-print(final_html)
+
+

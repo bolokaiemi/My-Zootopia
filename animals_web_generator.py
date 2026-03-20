@@ -89,31 +89,37 @@ def generate_animals_string(data):
 
 
 
-output = ""  # Define an empty string
-data = animals
+# Load your JSON data
+data = load_data("animals_data.json")
 
-# ✅ FIXED LOOP HERE
-for animal in load_data("animals_data.json"):
-    name = animal.get("name")
-    if name:
-        output += f"Name: {name}\n"
+# Initialize output
+output = ""
 
-    characteristics = animal.get("characteristics", {})
+# Loop over each animal and generate <li> HTML
+for animal_data in data:
+    output += '<li class="cards__item">\n'
 
-    diet = characteristics.get("diet")
-    if diet:
-        output += f"Diet: {diet}\n"
+    # Name
+    name = animal_data.get("name", "Unknown")
+    output += f"Name: {name}<br/>\n"
 
-    locations = animal.get("locations")
-    if locations:
-        output += f"Location: {locations[0]}\n"
+    # Diet
+    characteristics = animal_data.get("characteristics", {})
+    diet = characteristics.get("diet", "Unknown")
+    output += f"Diet: {diet}<br/>\n"
 
-    animal_type = characteristics.get("type")
-    if animal_type:
-        output += f"Type: {animal_type}\n"
+    # Location
+    locations = animal_data.get("locations", ["Unknown"])
+    output += f"Location: {locations[0]}<br/>\n"
 
-    output += "\n"
+    # Type
+    animal_type = characteristics.get("type", "Unknown")
+    output += f"Type: {animal_type}<br/>\n"
 
+    # Close the list item
+    output += "</li>\n"
+
+# Print for verification
 print(output)
 
 # Generate HTML list items dynamically from output
