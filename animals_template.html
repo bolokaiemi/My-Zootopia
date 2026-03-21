@@ -50,15 +50,24 @@
 
         .card__text {
             line-height: 1.6;
+
         }
+            .animal-details li {
+                list-style-type: none; /* removes bullets */
+                font-weight: bold; /* removes bold */
+                padding-right: -1; /* remove left indent */
+                .animal-details {
+        list-style-type: none;   /* remove bullets */
+        padding-right: 0;         /* remove left indent */
+        margin: 0;               /* remove any extra margin */
+        text-align: right;        /* ensure text is left-aligned */
+            }
+
+
     </style>
 </head>
 <body>
     <h1>My Animal Repository</h1>
-
-
-
-
 </body>
 </html>
 <style>
@@ -180,25 +189,17 @@
       <strong>Type:</strong> mamal<br/>
   </p>
 </li>
-          <li class="cards__item animal-card">
-        <a href="https://upload.wikimedia.org/wikipedia/commons/d/dc/Vulpes_lagopus_in_Iceland_%28cropped_3%29.jpg">
-    <img src="images/arctic.jpg" width="300" height="200" alt="Arctic Fox" class="card__image"/>
-</a>
-        <div class="animal-card__content">
-        <h2 class="animal-card__title">Arctic Fox</h2>
-        <div class="animal-card__text">
-        Lifespan: 12-15 years<br/>
-        Habitat: Forests Tundra<br/>
-        Behavior : "Friendly, Social<br/>
-        Geographic Range: North AmericaCanada, US<br/>
-            lifespan: {lifespan}
-            habitat: {habitat}
-            behavior: {behavior}
-            reographic: {reographic-range}
 
-        image_url": <a href="https://upload.wikimedia.org/wikipedia/commons/d/dc/Vulpes_lagopus_in_Iceland_%28cropped_3%29.jpg" target="_blank">
-        View Image</a><br/>
-        Reproduction / Breeding Info: pups per litter<br/>
+  <li class="cards__item">
+  <div class="card__title">English Foxhound</div>
+  <div class="card__text">
+    <ul class="animal-details">
+      <li><strong>Diet:</strong> Carnivore</li>
+      <li><strong>Location:</strong> North-America and Canada</li>
+      <li><strong>Type:</strong> mammal</li>
+    </ul>
+  </div>
+</li>
     </div>
 </li>
 </ul>
