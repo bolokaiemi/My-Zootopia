@@ -72,21 +72,7 @@ def generate_animals_string(data):
     #output += serialize_animal(animal)
     output = ''
     for animal_obj in data:
-        output += serialize_animal(animal)
-
-    #for animal in load_data("animals_data.json"):
-        #name = animal.get("name")
-        #output += f"Name: {name}\n"
-
-        #characteristics = animal.get("characteristics", {})
-        #diet = characteristics.get("diet")
-
-        #if diet:
-            #output += f"Diet: {diet}\n"
-
-        #locations = animal.get("locations")
-        #if locations:
-            #output += f"Location: {locations[0]}\n"
+        output += serialize_animal(animal_obj)
 
     animal_type = characteristics.get("type")
     if animal_type:
