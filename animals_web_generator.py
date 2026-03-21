@@ -1,5 +1,12 @@
 import json
 
+def serialize_animal(animal_obj):
+    output = ''
+    output += '<li class="cards__item">\n'
+    output += f'<div class="card__title">{animal_obj["name"]}</div>\n'
+    ...
+    return output
+
 def load_data(file_path):
   """ Loads a JSON file """
   with open(file_path, "r") as handle:
@@ -61,27 +68,29 @@ def generate_animals_string(data):
     """
     Generate a formatted string with animal data.
     """
-
-    output = ""
-
     # ✅ FIXED LOOP + .get()
-    for animal in load_data("animals_data.json"):
-        name = animal.get("name")
-        output += f"Name: {name}\n"
+    #output += serialize_animal(animal)
+    output = ''
+    for animal_obj in data:
+        output += serialize_animal(animal)
 
-        characteristics = animal.get("characteristics", {})
-        diet = characteristics.get("diet")
+    #for animal in load_data("animals_data.json"):
+        #name = animal.get("name")
+        #output += f"Name: {name}\n"
 
-        if diet:
-            output += f"Diet: {diet}\n"
+        #characteristics = animal.get("characteristics", {})
+        #diet = characteristics.get("diet")
 
-        locations = animal.get("locations")
-        if locations:
-            output += f"Location: {locations[0]}\n"
+        #if diet:
+            #output += f"Diet: {diet}\n"
 
-        animal_type = characteristics.get("type")
-        if animal_type:
-            output += f"Type: {animal_type}\n"
+        #locations = animal.get("locations")
+        #if locations:
+            #output += f"Location: {locations[0]}\n"
+
+    animal_type = characteristics.get("type")
+    if animal_type:
+        output += f"Type: {animal_type}\n"
 
         output += "\n"
 
