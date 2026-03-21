@@ -1,4 +1,8 @@
 import json
+import os
+print(os.path.abspath("filtered_animal.html"))
+
+
 
 def serialize_animal(animal_obj):
     output = ''
@@ -66,7 +70,7 @@ with open("animals_template.html", "r") as file_path:
 animal_html = animals.replace('_replace_animal_info', "_animals")
 print(animal_html)
 
-with open("animals.html", "w") as file_out:
+with open("filtered_animals.html", "w") as file_out:
     animal_html = file_out.write(animal_html)
 
 
@@ -114,6 +118,50 @@ def generate_animals_string(data):
 # Load your JSON data
 data = load_data("animals_data.json")
 
+
+# Load JSON data
+with open("animals_data.json", "r") as file:
+    animals = json.load(file)
+
+# Normalize keys to lowercase for safety
+animals = [{k.lower(): v for k, v in animal.items()} for animal in animals]
+
+# Extract unique skin_type values (ignore missing)
+skin_types = sorted({animal.get("skin_type") for animal in animals if animal.get("skin_type")})
+print("Available skin types:")
+for current_skin in skin_types:
+    print(f"- {current_skin}")
+
+# Prompt user to choose a skin_type
+selected_skin = input("\nEnter a skin type from the list above: ").strip()
+
+# Filter animals with the selected skin_type
+filtered_animals = [a for a in animals if a.get("skin_type") == selected_skin]
+
+if not filtered_animals:
+    print(f"No animals found with skin type '{selected_skin}'.")
+else:
+    print(f"\nGenerating website for animals with skin type '{selected_skin}'...\n")
+
+
+    html_content += f"""  <li class="cards__item">
+    <div class="card__title">{name}</div>
+    <div class="card__text">
+      <ul class="animal-details">
+        <li><strong>Diet:</strong> {diet}</li>
+        <li><strong>Location:</strong> {location}</li>
+        <li><strong>Type:</strong> {animal_type}</li>
+        <li><strong>Type:</strong> {skin_type}</li>
+      </ul>
+    </div>
+  </li>\n"""
+    html_content += "</ul>"
+
+    # Save to file
+    with open("filtered_animals.html", "w") as file:
+        file.write(html_content)
+    print("Website generated: filtered_animals.html")
+
 # Initialize output
 output = ""
 
@@ -155,7 +203,7 @@ html_content = f"""
 </body>
 """
 
-with open("animals.html", "w", encoding="utf-8") as file:
+with open("filtered_animals.html", "w", encoding="utf-8") as file:
     file.write(html_content)
 
 print("HTML file created!")
