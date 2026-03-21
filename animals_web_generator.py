@@ -32,6 +32,12 @@ def print_animals_data(file_path):
         diet = animal.get("diet")
         locations = animal.get("locations")
         animal_type = animal.get("type")
+        lifespan = animal.get("lifespan")
+        habitat = animal.get("habitat")
+        behavior = animal.get("behavior")
+        geographic = animal.get("geographic_range")
+        image_url = animal.get("image_url")
+        reproduction = animal.get("reproduction")
 
         if name:
             print(f"Name: {name}")
@@ -78,7 +84,28 @@ def generate_animals_string(data):
     if animal_type:
         output += f"Type: {animal_type}\n"
 
-        output += "\n"
+
+    output += '<li class="cards__item">\n'
+
+    output += f'<img src="images/arctic_fox.jpg" alt="Arctic Fox" class="card__image"/>\n'
+    output += f'<h2 class="card__title">Arctic Fox</h2>\n'
+
+    output += '<div class="card__text">\n'
+
+    output += f"Lifespan: {lifespan}\n"
+    output += f"Habitat: {habitat}\n"
+    output += f"Behavior: {behavior}\n"
+    output += f"Geographic_Range:{Geographic_Range}\n"
+    output += f"Image_URL:{Image_URL}\n"
+    output += f"Reproduction: {reproduction}\n"
+
+    output += '</div>\n'
+
+    output += '</li>\n'
+
+
+
+    output += "\n"
 
     return output
 

@@ -8,8 +8,15 @@
       "order": "Carnivora",
       "family": "Canidae",
       "genus": "Canis",
-      "scientific_name": "Canis lupus"
+      "scientific_name": "Canis lupus familiaris",
+      "lifespan": "12-15 years",
+      "habitat ": "Forests Tundra",
+      "behavior ": "Friendly, Social",
+      "geographic": "North AmericaCanada, US",
+      "image_url": "images/arctic_fox.jpg",
+      "reproduction": "pups per litter"
     },
+
     "locations": [
       "North-America"
     ],
@@ -25,7 +32,12 @@
       "group": "Dog",
       "color": "BlackWhiteTan",
       "skin_type": "Hair",
-      "lifespan": "10 to 12 years"
+      "lifespan": "10 to 12 years",
+      "habitat ": "Forests Tundra",
+      "behavior ": "Friendly, Social",
+      "geographic_range": "North AmericaCanada, US",
+      "image_url": "images/arctic_fox.jpg",
+      "reproduction": "pups per litter"
     }
   },
   {
@@ -104,7 +116,7 @@
     }
   },
   {
-    "name": "Darwin’s fox",
+    "name": "Darwin's fox",
     "taxonomy": {
       "kingdom": "Animalia",
       "phylum": "Chordata",

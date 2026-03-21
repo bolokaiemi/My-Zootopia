@@ -99,6 +99,44 @@
           margin: 50px;
         }
 
+        /* Scope everything under .animal-card */
+.animal-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 20px 40px -14px rgba(0,0,0,0.25);
+    padding: 1rem;
+    margin: 20px 0;
+}
+
+/* LEFT column (text) */
+.animal-card__content {
+    flex: 1;
+}
+
+/* RIGHT column (image) */
+.animal-card__image {
+    width: 220px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+/* Title */
+.animal-card__title {
+    margin-bottom: 0.5rem;
+    font-size: 1.4rem;
+}
+
+/* Text */
+.animal-card__text {
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
         .card__title {
           color: @gray-dark;
           font-size: 1.25rem;
@@ -113,6 +151,8 @@
           line-height: 2;
           margin-bottom: 1.25rem;
         }
+
+
         </style>
     </head>
     <body>
@@ -123,14 +163,8 @@
     Location: North-America<br/>
     Type: Hound<br/>
     </li>
-    <li class="cards__item">
-    Name: Arctic Fox<br/>
-    Diet: Carnivore<br/>
-    Location: Eurasia<br/>
-    Type: Mammal<br/>
-    </li>
 
-     <li class="cards__item">
+    <li class="cards__item">
     Name: Arctic Fox<br/>
     Diet: Carnivore<br/>
     Location: Eurasia<br/>
@@ -145,6 +179,27 @@
       <strong>Location:</strong> North-America and Canada<br/>
       <strong>Type:</strong> mamal<br/>
   </p>
+</li>
+          <li class="cards__item animal-card">
+        <a href="https://upload.wikimedia.org/wikipedia/commons/d/dc/Vulpes_lagopus_in_Iceland_%28cropped_3%29.jpg">
+    <img src="images/arctic.jpg" width="300" height="200" alt="Arctic Fox" class="card__image"/>
+</a>
+        <div class="animal-card__content">
+        <h2 class="animal-card__title">Arctic Fox</h2>
+        <div class="animal-card__text">
+        Lifespan: 12-15 years<br/>
+        Habitat: Forests Tundra<br/>
+        Behavior : "Friendly, Social<br/>
+        Geographic Range: North AmericaCanada, US<br/>
+            lifespan: {lifespan}
+            habitat: {habitat}
+            behavior: {behavior}
+            reographic: {reographic-range}
+
+        image_url": <a href="https://upload.wikimedia.org/wikipedia/commons/d/dc/Vulpes_lagopus_in_Iceland_%28cropped_3%29.jpg" target="_blank">
+        View Image</a><br/>
+        Reproduction / Breeding Info: pups per litter<br/>
+    </div>
 </li>
 </ul>
     </body>
