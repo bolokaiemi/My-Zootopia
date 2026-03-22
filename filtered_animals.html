@@ -3,163 +3,108 @@
     <head>
         <!--suppress CssInvalidAtRule -->
         <style>
-        @gray-darker:               #444444;
-        @gray-dark:                 #696969;
-        @gray:                      #999999;
-        @gray-light:                #cccccc;
-        @gray-lighter:              #ececec;
-        @gray-lightest:             lighten(@gray-lighter,4%);
+        <style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: linear-gradient(135deg, #ffe3ec, #e0f7fa);
+        margin: 0;
+        padding: 20px;
+    }
 
+    h1 {
+        text-align: center;
+        color: #2c3e50;
+        margin-bottom: 30px;
+        font-size: 42px;
+        font-weight: normal;
+    }
 
+    ul.cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        gap: 20px;
+    }
 
-        html {
-            background-color: #ffe9e9;
+    li.cards__item {
+        background: linear-gradient(135deg, #ffffff, #f1f8ff);
+        border-radius: 15px;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+        width: 250px;
+        padding: 15px;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+        border-top: 6px solid #ff7eb3;
+    }
+
+    /* Different colors per card */
+    li.cards__item:nth-child(2) {
+        border-top-color: #7ed957;
+    }
+
+    li.cards__item:nth-child(3) {
+        border-top-color: #5dade2;
+    }
+
+    li.cards__item:nth-child(4) {
+        border-top-color: #f5b041;
+    }
+
+    li.cards__item:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    }
+
+    .card__title {
+        font-size: 1.3em;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 10px;
+        color: #34495e;
+    }
+
+    .card__text {
+        font-size: 0.95em;
+        color: #555;
+    }
+
+    .animal-details {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .animal-details li {
+        margin-bottom: 6px;
+        padding: 4px 6px;
+        border-radius: 6px;
+        background-color: #f9f9f9;
+    }
+
+    .animal-details li strong {
+        color: #2c3e50;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        li.cards__item {
+            width: 45%;
         }
+    }
 
-        h1 {
-            text-align: center;
-            font-size: 40pt;
-            font-weight: normal;
+    @media (max-width: 480px) {
+        li.cards__item {
+            width: 90%;
         }
-
-        body {
-            font-family: Arial, sans-serif;
-            padding: 1rem;
-            width: 900px;
-            margin: auto;
-        }
-
-        .cards {
-            list-style: none;
-            padding: 0;
-        }
-
-        .cards__item {
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-            padding: 1rem;
-            margin: 20px 0;
-        }
-
-        .card__title {
-            font-size: 20px;
-            font-weight: bold;
-        }
-
-        .card__text {
-            line-height: 1.6;
-
-            }
-
-            /*noinspection CssInvalidPropertyValue*/
-
-            .animal-details li {
-                list-style-type: none; /* removes bullets */
-                font-weight: bold; /* removes bold */
-                padding-right: -1; /* remove left indent */
-                .animal-details {
-        list-style-type: none;   /* remove bullets */
-        padding-right: 0;         /* remove left indent */
-        margin: 0;               /* remove any extra margin */
-        text-align: right;        /* ensure text is left-aligned */
-                }
-
-
-        h1 {
-            text-align: center;
-            font-size: 40pt;
-            font-weight: normal;
-        }
-
-        body {
-          font-family: 'Roboto','Helvetica Neue', Helvetica, Arial, sans-serif;
-          font-style: normal;
-          font-weight: 400;
-          letter-spacing: 0;
-          padding: 1rem;
-          text-rendering: optimizeLegibility;
-          -webkit-font-smoothing: antialiased;
-          -moz-osx-font-smoothing: grayscale;
-          -moz-font-feature-settings: "liga" on;
-          width: 900px;
-          margin: auto;
-        }
-
-        .cards {
-          list-style: none;
-          margin: 0;
-          padding: 0;
-        }
-
-        .cards__item {
-          background-color: white;
-          border-radius: 0.25rem;
-          box-shadow: 0 20px 40px -14px rgba(0,0,0,0.25);
-          overflow: hidden;
-          padding: 1rem;
-          margin: 50px;
-        }
-
-        /* Scope everything under .animal-card */
-.animal-card {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-
-    background-color: white;
-    border-radius: 0.5rem;
-    box-shadow: 0 20px 40px -14px rgba(0,0,0,0.25);
-    padding: 1rem;
-    margin: 20px 0;
-}
-
-/* LEFT column (text) */
-.animal-card__content {
-    flex: 1;
-}
-
-/* RIGHT column (image) */
-.animal-card__image {
-    width: 220px;
-    height: 160px;
-    object-fit: cover;
-    border-radius: 0.5rem;
-}
-
-/* Title */
-.animal-card__title {
-    margin-bottom: 0.5rem;
-    font-size: 1.4rem;
-}
-
-/* Text */
-.animal-card__text {
-    line-height: 1.5;
-    font-size: 0.95rem;
-}
-
-        .card__title {
-          color: @gray-dark;
-          font-size: 1.25rem;
-          font-weight: 300;
-          letter-spacing: 2px;
-          text-transform: uppercase;
-        }
-
-        .card__text {
-          flex: 1 1 auto;
-          font-size: 0.95rem;
-          line-height: 2;
-          margin-bottom: 1.25rem;
-        }
-
-
+    }
+</style>
     </style>
 </head>
 <body>
-    <h1>My Animal Repository</h1>
-    <h2>__REPLACE_ANIMALS_INFO__</h2>
+    <h1>MyFiltered Animals</h1>
+
 
       <ul class="cards">
     <li class="cards__item">
