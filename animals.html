@@ -1,7 +1,155 @@
+<html>
+    <head>
+        <style>
+        @gray-darker:               #444444;
+        @gray-dark:                 #696969;
+        @gray:                      #999999;
+        @gray-light:                #cccccc;
+        @gray-lighter:              #ececec;
+        @gray-lightest:             lighten(@gray-lighter,4%);
 
-<body>
-    <h1>My Animal Repository</h1>
-    <ul class="cards">
-        <li class="cards__item"><br>Name: American Foxhound<br/><br>Diet: Omnivore<br/><br>Location: North-America<br/><br>Type: Hound<br/><br></li><br><li class="cards__item"><br>Name: Arctic Fox<br/><br>Diet: Carnivore<br/><br>Location: Eurasia<br/><br>Type: Mammal<br/><br></li><br><li class="cards__item"><br>Name: Cross Fox<br/><br>Diet: Carnivore<br/><br>Location: North-America<br/><br>Type: mammal<br/><br></li><br><li class="cards__item"><br>Name: Darwin's fox<br/><br>Diet: Omnivore<br/><br>Location: South-America<br/><br>Type: Mammal<br/><br></li><br><li class="cards__item"><br>Name: English Foxhound<br/><br>Diet: Omnivore<br/><br>Location: Europe<br/><br>Type: Unknown<br/><br></li><br><li class="cards__item"><br>Name: Fennec Fox<br/><br>Diet: Omnivore<br/><br>Location: Africa<br/><br>Type: Unknown<br/><br></li><br><li class="cards__item"><br>Name: Fox<br/><br>Diet: Carnivore<br/><br>Location: Africa<br/><br>Type: Mammal<br/><br></li><br><li class="cards__item"><br>Name: Fox Snakes<br/><br>Diet: Carnivore<br/><br>Location: North-America<br/><br>Type: Unknown<br/><br></li><br><li class="cards__item"><br>Name: Fox Squirrel<br/><br>Diet: Omnivore<br/><br>Location: Central-America<br/><br>Type: rodent<br/><br></li><br><li class="cards__item"><br>Name: Fox Terrier<br/><br>Diet: Omnivore<br/><br>Location: Europe<br/><br>Type: Unknown<br/><br></li><br><li class="cards__item"><br>Name: Golden-Crowned Flying Fox<br/><br>Diet: Herbivore<br/><br>Location: Asia<br/><br>Type: Unknown<br/><br></li><br><li class="cards__item"><br>Name: Gray Fox<br/><br>Diet: Omnivore<br/><br>Location: Central-America<br/><br>Type: Mammal<br/><br></li><br><li class="cards__item"><br>Name: Kit Fox<br/><br>Diet: Omnivore<br/><br>Location: Central-America<br/><br>Type: mammal<br/><br></li><br><li class="cards__item"><br>Name: Marble Fox<br/><br>Diet: Omnivore<br/><br>Location: North-America<br/><br>Type: Mammal<br/><br></li><br><li class="cards__item"><br>Name: Red Fox<br/><br>Diet: Omnivore<br/><br>Location: Africa<br/><br>Type: Unknown<br/><br></li><br><li class="cards__item"><br>Name: Smooth Fox Terrier<br/><br>Diet: Omnivore<br/><br>Location: Europe<br/><br>Type: Unknown<br/><br></li><br><li class="cards__item"><br>Name: Tibetan Fox<br/><br>Diet: Carnivore<br/><br>Location: Asia<br/><br>Type: Mammal<br/><br></li><br><li class="cards__item"><br>Name: Toy Fox Terrier<br/><br>Diet: Omnivore<br/><br>Location: North-America<br/><br>Type: Unknown<br/><br></li><br><li class="cards__item"><br>Name: Wire Fox Terrier<br/><br>Diet: Omnivore<br/><br>Location: Europe<br/><br>Type: Unknown<br/><br></li><br>
-    </ul>
-</body>
+
+        html {
+          background-color: #ffe9e9;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 40pt;
+            font-weight: normal;
+        }
+
+        body {
+          font-family: 'Roboto','Helvetica Neue', Helvetica, Arial, sans-serif;
+          font-style: normal;
+          font-weight: 400;
+          letter-spacing: 0;
+          padding: 1rem;
+          text-rendering: optimizeLegibility;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          -moz-font-feature-settings: "liga" on;
+          width: 900px;
+          margin: auto;
+        }
+
+        .cards {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+        }
+
+        .cards__item {
+          background-color: white;
+          border-radius: 0.25rem;
+          box-shadow: 0 20px 40px -14px rgba(0,0,0,0.25);
+          overflow: hidden;
+          padding: 1rem;
+          margin: 50px;
+        }
+
+        .card__title {
+          color: @gray-dark;
+          font-size: 1.25rem;
+          font-weight: 300;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+        }
+
+        .card__text {
+          flex: 1 1 auto;
+          font-size: 0.95rem;
+          line-height: 2;
+          margin-bottom: 1.25rem;
+        }
+
+        /* Reset all lists */
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+/* Card container */
+.cards {
+  margin: 0;
+  padding: 0;
+}
+
+/* Individual card */
+.cards__item {
+  background-color: white;
+  border-radius: 0.25rem;
+  box-shadow: 0 20px 40px -14px rgba(0,0,0,0.25);
+  overflow: hidden;
+  padding: 1rem;
+  margin: 20px; /* slightly reduced for better spacing */
+}
+
+/* Title */
+.card__title {
+  color: #333; /* replaced @gray-dark */
+  font-size: 1.25rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+/* Text container */
+.card__text {
+  flex: 1 1 auto;
+  font-size: 0.95rem;
+  line-height: 1.2; /* FIXED spacing */
+  margin-bottom: 0.5rem;
+}
+
+/* Inner animal details */
+.animal-details {
+  margin-top: 5px;
+}
+
+/* Align label + value neatly */
+.animal-details li {
+  display: flex;
+  gap: 6px;
+  line-height: 1.2;
+  margin-bottom: 2px;
+}
+
+/* Make labels align vertically */
+.animal-details li strong {
+  min-width: 110px;
+  display: inline-block;
+}
+
+
+
+
+        </style>
+    </head>
+    <body>
+        <h1>My Animal Repository</h1>
+        <ul class="cards">
+            
+    <li class="cards__item">
+        <div class="card__title">Fox Snakes</div>
+        <div class="card__text">
+            <ul class="animal-details">
+                <li><strong>Diet:</strong> Carnivore</li>
+                <li><strong>Location:</strong> North-America</li>
+                <li><strong>Type:</strong> Unknown</li>
+                <li><strong>Skin Type:</strong> Scales</li>
+            </ul>
+        </div>
+    </li>
+    
+        </ul>
+    </body>
+</html>
